@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 require('dotenv').config();
 
 // //set up URI connection
@@ -31,8 +31,6 @@ mongoose.connect(MONGODBURI, config);
 DB.on('open', () => console.log('You are connected to Mongo'))
 .on('close', () => console.log('You are disconnected to Mongo'))
 .on('error', (err) => console.log(err));
-
-
 
 
 // mongoose.connect('mongodb://localhost/cookbooks_db', { useNewUrlParser: true, useUnifiedTopology: true })
