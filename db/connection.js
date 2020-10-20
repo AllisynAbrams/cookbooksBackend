@@ -1,5 +1,8 @@
-// const mongoose = require('mongoose')
-require('dotenv').config();
+const mongoose = require('mongoose')
+
+/////////////////////////////////////////
+
+// require('dotenv').config();
 
 // //set up URI connection
 // const mongoURI = 'mongodb://localhost/cookbooks_db';
@@ -21,19 +24,23 @@ require('dotenv').config();
 // db.on('connected', () => console.log('mongo connected: ', mongoURI));
 // db.on('disconnected', () => console.log('mongo disconnected'));
 
-const { MONGODBURI } = process.env;
-const mongoose = require('mongoose');
-const config = { useUnifiedTopology: true, useNewUrlParser: true };
-const DB = mongoose.connection;
+//////////////////////////////////////////
 
-mongoose.connect(MONGODBURI, config);
+// const { MONGODBURI } = process.env;
+// const mongoose = require('mongoose');
+// const config = { useUnifiedTopology: true, useNewUrlParser: true };
+// const DB = mongoose.connection;
 
-DB.on('open', () => console.log('You are connected to Mongo'))
-.on('close', () => console.log('You are disconnected to Mongo'))
-.on('error', (err) => console.log(err));
+// mongoose.connect(MONGODBURI, config);
+
+// DB.on('open', () => console.log('You are connected to Mongo'))
+// .on('close', () => console.log('You are disconnected to Mongo'))
+// .on('error', (err) => console.log(err));
+
+//////////////////////////////////////////
 
 
-// mongoose.connect('mongodb://localhost/cookbooks_db', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost/cookbooks_db', { useNewUrlParser: true, useUnifiedTopology: true })
 
 mongoose.Promise = Promise
 
